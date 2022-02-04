@@ -1,0 +1,70 @@
+﻿@page
+@model TodoApplication.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TaskTodo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaskTodo.TaskTodoId" />
+            <div class="form-group">
+                <label asp-for="TaskTodo.UserId" class="control-label"></label>
+                <input asp-for="TaskTodo.UserId" class="form-control" />
+                <span asp-validation-for="TaskTodo.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.Name" class="control-label"></label>
+                <input asp-for="TaskTodo.Name" class="form-control" />
+                <span asp-validation-for="TaskTodo.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.Description" class="control-label"></label>
+                <input asp-for="TaskTodo.Description" class="form-control" />
+                <span asp-validation-for="TaskTodo.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.Status" class="control-label"></label>
+                <select asp-for="TaskTodo.Status" class="form-control"></select>
+                <span asp-validation-for="TaskTodo.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.Priority" class="control-label"></label>
+                <select asp-for="TaskTodo.Priority" class="form-control"></select>
+                <span asp-validation-for="TaskTodo.Priority" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.CreationDate" class="control-label"></label>
+                <input asp-for="TaskTodo.CreationDate" class="form-control" />
+                <span asp-validation-for="TaskTodo.CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.EndDate" class="control-label"></label>
+                <input asp-for="TaskTodo.EndDate" class="form-control" />
+                <span asp-validation-for="TaskTodo.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTodo.ModificationDate" class="control-label"></label>
+                <input asp-for="TaskTodo.ModificationDate" class="form-control" />
+                <span asp-validation-for="TaskTodo.ModificationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

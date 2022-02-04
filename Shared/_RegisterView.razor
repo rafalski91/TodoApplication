@@ -1,0 +1,38 @@
+﻿@page "/register"
+@*@using Microsoft.AspNetCore.Identity
+@using TodoApplication.Data.Entities
+@using TodoApplication.Services
+@using Microsoft.AspNetCore.Components
+@using System.Security.Cryptography.X509Certificates
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    public class RegisterView
+    {
+        [Inject]
+        IApplicationManager ApplicationManager {get; set;}
+
+        public ApplicationUser User { get; set; } = new ApplicationUser();
+    }
+
+}*@
+@*<section class="employee-edit">
+    <h1 class="page-title">Create new account</h1>
+    <EditForm Model="@User" OnValidSubmit="@HandleValidSubmit"
+              OnInvalidSubmit="@HandleInvalidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary></ValidationSummary>
+        <div class="form-group row">
+            <label for="lastName" class="col-sm-3">Last name: </label>
+            <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Employee.LastName)" />
+        </div>
+
+        <div class="form-group row">
+            <label for="firstName" class="col-sm-3">First name: </label>
+            <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
+            <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Employee.FirstName)" />
+        </div>
+    </EditForm>
+</section>*@
+
